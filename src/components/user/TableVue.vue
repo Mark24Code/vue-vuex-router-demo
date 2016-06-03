@@ -52,7 +52,7 @@ export default {
       this.userDelete(id)
     },
     fetchUsers () {
-      axios('/mock/user.json').then((ret) => {
+      axios('/static/mock/user.json').then((ret) => {
         if(ret.status === 200) {
           this.$store.state.users = ret.data
         }
