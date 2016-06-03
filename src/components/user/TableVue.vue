@@ -25,6 +25,7 @@
 <script>
 import router from '../../router'
 import * as actions from '../../actions'
+import axios from 'axios'
 
 export default {
   vuex: {
@@ -37,6 +38,9 @@ export default {
       }
     }
   },
+  ready () {
+    this.fetchUsers();
+  },
   methods: {
     toEdit (id) {
       this.userStartOperate(id)
@@ -46,6 +50,13 @@ export default {
     },
     toDelete (id) {
       this.userDelete(id)
+    },
+    fetchUsers () {
+      axios('/mock/user.json').then((ret) => {
+        if(ret.status === 200) {
+          this.$store.state.users = ret.data
+        }
+      })
     }
   }
 }
