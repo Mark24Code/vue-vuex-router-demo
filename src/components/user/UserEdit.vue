@@ -12,8 +12,8 @@
       </label>
     </div>
     <div class="footer">
-      <button v-on:click="save()" class="btn btn-save">保存</button>
-      <button v-on:click="close()" class="btn btn-close">关闭</button>
+      <button @click="save()" class="btn btn-save">保存</button>
+      <button @click="close()" class="btn btn-close">关闭</button>
     </div>
   </div>
 </template>

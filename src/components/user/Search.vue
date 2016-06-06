@@ -1,7 +1,7 @@
 <template>
   <div class="search">
-    <input v-model="userName" v-on:keyup.enter="onSeachSubmit()" class="search-input" type="text" placeholder="请输入姓名">
-    <button v-on:click="onSeachSubmit()" class="btn">搜索</button>
+    <input v-model="userName" @keyup.enter="onSeachSubmit()" class="search-input" type="text" placeholder="请输入姓名" autofocus="true">
+    <button @click.stop.prevent="onSeachSubmit" class="btn">搜索</button>
   </div>
 </template>
 

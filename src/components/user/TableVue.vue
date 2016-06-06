@@ -9,13 +9,13 @@
       </div>
     </div>
     <div class="tbody">
-      <div v-for="user in users" class="row clearfix">
+      <div v-for="user in users" transition="expand" class="row clearfix">
         <span class="col col-center">{{ user.name }}</span>
         <span class="col col-center">{{ user.age }}</span>
         <span class="col">{{ user.tel }}</span>
         <div class="col col-center">
-          <button v-on:click="toEdit(user.id)" class="btn btn-edit">编辑</button>
-          <button v-on:click="toDelete($index)" class="btn btn-del">删除</button>
+          <button @click="toEdit(user.id)" class="btn btn-edit">编辑</button>
+          <button @click="toDelete($index)" class="btn btn-del">删除</button>
         </div>
       </div>
 	</div>
@@ -38,8 +38,8 @@ export default {
       }
     }
   },
-  ready () {
-    this.fetchUsers();
+  created () {
+    this.fetchUsers()
   },
   methods: {
     toEdit (id) {
@@ -54,7 +54,7 @@ export default {
     fetchUsers () {
       axios('/static/mock/user.json').then((ret) => {
         if(ret.status === 200) {
-          this.$store.state.users = ret.data
+          this.userAll(ret.data)
         }
       })
     }
@@ -63,6 +63,12 @@ export default {
 </script>
 
 <style scoped>
+
+  .app {
+    .go {
+      color: #fff;
+    }
+  }
 
 .table {
   margin: 0 15px;
@@ -127,6 +133,16 @@ export default {
   display: table;
   content: '\20';
   clear: both;
+}
+
+.expand-transition {
+  transition: all .3s ease;
+  opacity: 1;
+}
+
+.expand-enter,
+.expand-leave {
+  opacity: .01;
 }
 
 </style>
