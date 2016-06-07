@@ -14,8 +14,8 @@ const mutations = {
   [types.USER_ALL] (state, users) {
     state.users = users
   },
-  [types.USER_ADD] (state) {
-    console.log(state);
+  [types.USER_ADD] (state, user) {
+    state.users.push(user)
   },
   [types.USER_EDIT] (state, user) {
     const id = user.id
