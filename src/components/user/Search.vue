@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { userFilter } from '../../actions'
+  import { userFilter } from '../../store/actions'
 
   export default {
     vuex: {

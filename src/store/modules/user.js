@@ -3,7 +3,7 @@
  * 这样就不用修改 import 这部分的代码，直接在后面引用即可
 */
 
-import * as types from './constants'
+import * as types from '../constants'
 
 const state = {
   currentId: 0,

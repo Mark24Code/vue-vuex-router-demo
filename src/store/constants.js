@@ -1,3 +1,10 @@
+/***
+ * actions 和 mutations 公用的静态变量
+ * 这里按模块管理 
+ */
+/**
+ * User 模块
+*/
 export const USER_ALL = 'USER_ALL'
 export const USER_ADD = 'USER_ADD'
 export const USER_EDIT = 'USER_EDIT'

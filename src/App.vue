@@ -7,10 +7,10 @@
 <script>
 
 // 接入 vuex 的 store
-
 import store from './store'
 
 export default {
+  /* 注册顶层 App 的 store */
   store
 }
 

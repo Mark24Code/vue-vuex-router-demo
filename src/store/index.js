@@ -18,7 +18,9 @@ Vue.use(Vuex)
  * 其实就是将［中间件］的一些数据导入 store 来进行管理
 */
 
-export default = new Vuex.Store({
+export default new Vuex.Store({
+  // TODO: 没有找到好的方式注入 getters 的 state 参数
+  state: user.state,
   modules: {
     user
   }

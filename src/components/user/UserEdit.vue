@@ -21,7 +21,7 @@
 <script>
 
   import HeaderVue from './HeaderVue'
-  import { userEdit } from '../../actions'
+  import { userEdit } from '../../store/actions'
   import router from '../../router'
 
   export default {

@@ -12,7 +12,7 @@ import HeaderVue from './HeaderVue'
 import TableVue from './TableVue'
 import Search from './Search'
 
-import * as actions from '../../actions'
+import * as actions from '../../store/actions'
 
 export default {
   vuex: {
