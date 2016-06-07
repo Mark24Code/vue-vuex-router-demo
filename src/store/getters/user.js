@@ -8,7 +8,6 @@
 */
 
 export function getUsers (state) {
-    console.log(state);
     return state.users.filter(user => {
         return user.name.indexOf(state.searchName) !== -1
     })
