@@ -22,7 +22,7 @@ const mutations = {
 
     state.users.forEach((currentUser) => {
       if(currentUser.id === id) {
-        currentUser = {...user}
+        currentUser = { ...user }
       }
     })
   },

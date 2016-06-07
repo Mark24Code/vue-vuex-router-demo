@@ -24,18 +24,16 @@
 
 <script>
 import router from '../../router'
-import * as actions from '../../actions'
 import axios from 'axios'
+
+import * as actions from '../../actions'
+import { users } from '../../store/getters/user'
 
 export default {
   vuex: {
     actions,
     getters: {
-      users: state => {
-        return state.users.filter(user => {
-          return user.name.indexOf(state.searchName) !== -1
-        })
-      }
+      users
     }
   },
   created () {
