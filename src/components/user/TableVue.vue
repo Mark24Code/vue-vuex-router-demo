@@ -26,7 +26,7 @@
 import router from '../../router'
 import axios from 'axios'
 
-import * as actions from '../../store/actions'
+import actions from '../../store/actions/userActions'
 import { getUsers } from '../../store/getters/user'
 
 export default {
