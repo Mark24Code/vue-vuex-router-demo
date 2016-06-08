@@ -33,11 +33,7 @@ export default {
   vuex: {
     actions,
     getters: {
-      users: state => {
-        return state.users.filter(user => {
-            return user.name.indexOf(state.searchName) !== -1
-        })
-      }
+      users: getUsers
     }
   },
   created () {
