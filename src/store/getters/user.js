@@ -7,6 +7,9 @@
  * 至于为什么，就因为我认为这样写更优雅直观，哈哈
 */
 
+/**
+ * state 会包含 module 作用域
+*/
 export function getUsers (state) {
     return state.user.users.filter(user => {
         return user.name.indexOf(state.user.searchName) !== -1
