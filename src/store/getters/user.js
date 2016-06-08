@@ -8,7 +8,7 @@
 */
 
 export function getUsers (state) {
-    return state.users.filter(user => {
-        return user.name.indexOf(state.searchName) !== -1
+    return state.user.users.filter(user => {
+        return user.name.indexOf(state.user.searchName) !== -1
     })
 }

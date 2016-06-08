@@ -62,12 +62,6 @@ export default {
 
 <style scoped>
 
-  .app {
-    .go {
-      color: #fff;
-    }
-  }
-
 .table {
   margin: 0 15px;
   font-size: 14px;

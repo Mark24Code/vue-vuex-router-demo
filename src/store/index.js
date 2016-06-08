@@ -19,8 +19,6 @@ Vue.use(Vuex)
 */
 
 export default new Vuex.Store({
-  // TODO: 没有找到好的方式注入 getters 的 state 参数
-  state: user.state,
   modules: {
     user
   }
