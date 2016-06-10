@@ -23,118 +23,115 @@
 </template>
 
 <script>
-import router from '../../router'
-import axios from 'axios'
+  import router from '../../router'
+  import axios from 'axios'
+  import * as actions from '../../actions/user'
+  import { getUsers } from '../../getters/user'
 
-import actions from '../../store/actions/userActions'
-import { getUsers } from '../../store/getters/user'
-
-export default {
-  vuex: {
-    actions,
-    getters: {
-      users: getUsers
-    }
-  },
-  created () {
-    this.fetchUsers()
-  },
-  methods: {
-    toEdit (id) {
-      this.userStartOperate(id)
-
-      // 去编辑页面
-      router.go({ name: 'userEdit', params: { id } })
+  export default {
+    vuex: {
+      actions,
+      getters: {
+        users: getUsers
+      }
     },
-    toDelete (id) {
-      this.userDelete(id)
+    created () {
+      this.fetchUsers()
     },
-    fetchUsers () {
-      axios('/static/mock/user.json').then((ret) => {
-        if(ret.status === 200) {
-          this.userAll(ret.data)
-        }
-      })
+    methods: {
+      toEdit (id) {
+        this.userStartOperate(id)
+
+        // 去编辑页面
+        router.go({ name: 'userEdit', params: { id } })
+      },
+      toDelete (id) {
+        this.userDelete(id)
+      },
+      fetchUsers () {
+        axios('/static/mock/user.json').then((ret) => {
+          if(ret.status === 200) {
+            this.userAll(ret.data)
+          }
+        })
+      }
     }
   }
-}
 </script>
 
 <style scoped>
+  .table {
+    margin: 0 15px;
+    font-size: 14px;
+    border: 1px solid #F4F7FA;
+  }
 
-.table {
-  margin: 0 15px;
-  font-size: 14px;
-  border: 1px solid #F4F7FA;
-}
+  .row {
+    padding: 10px 0;
+    border-bottom: 1px solid #F4F7FA;
+  }
 
-.row {
-  padding: 10px 0;
-  border-bottom: 1px solid #F4F7FA;
-}
+  .thead {
+    background: rgba(226, 226, 226, .2);
+  }
 
-.thead {
-  background: rgba(226, 226, 226, .2);
-}
+  .thead .col {
+    text-align: center;
+    line-height: normal;
+  }
 
-.thead .col {
-  text-align: center;
-  line-height: normal;
-}
+  .col {
+    float: left;
+    width: 25%;
+    line-height: 30px;
+  }
 
-.col {
-  float: left;
-  width: 25%;
-  line-height: 30px;
-}
+  .col.col-center {
+    text-align: center;
+  }
 
-.col.col-center {
-  text-align: center;
-}
+  .btn {
+    display: inline-block;
+    width: 45%;
+    max-width: 80px;
+    height: 30px;
+    background: #009CD5;
+    border: none;
+    color: #fff;
+    box-sizing: border-box;
+  }
 
-.btn {
-  display: inline-block;
-  width: 45%;
-  max-width: 80px;
-  height: 30px;
-  background: #009CD5;
-  border: none;
-  color: #fff;
-  box-sizing: border-box;
-}
+  .btn:focus {
+    outline: none;
+  }
 
-.btn:focus {
-  outline: none;
-}
+  .btn-del {
+    margin-left: 5px;
+    background: #C93B2A;
+  }
 
-.btn-del {
-  margin-left: 5px;
-  background: #C93B2A;
-}
+  .btn:hover {
+    cursor: pointer;
+    background-color: #50BAF0;
+  }
 
-.btn:hover {
-  cursor: pointer;
-  background-color: #50BAF0;
-}
+  .btn-del:hover {
+    background-color: #DA6661;
+  }
 
-.btn-del:hover {
-  background-color: #DA6661;
-}
+  .clearfix:after {
+    display: table;
+    content: '\20';
+    clear: both;
+  }
 
-.clearfix:after {
-  display: table;
-  content: '\20';
-  clear: both;
-}
+  .expand-transition {
+    transition: all .3s ease;
+    opacity: 1;
+  }
 
-.expand-transition {
-  transition: all .3s ease;
-  opacity: 1;
-}
-
-.expand-enter,
-.expand-leave {
-  opacity: .01;
-}
-
+  .expand-enter,
+  .expand-leave {
+    opacity: .01;
+  }
 </style>

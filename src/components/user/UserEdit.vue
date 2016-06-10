@@ -19,9 +19,8 @@
 </template>
 
 <script>
-
   import HeaderVue from './HeaderVue'
-  import { userEdit } from '../../store/actions'
+  import { userEdit } from '../../actions/user'
   import router from '../../router'
 
   export default {
@@ -91,14 +90,6 @@
   .label-text {
     display: block;
     margin: 10px 0;
-  }
-
-  #userName {
-
-  }
-
-  #tel {
-
   }
 
   .btn {

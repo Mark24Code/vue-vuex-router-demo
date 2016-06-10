@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { userFilter } from '../../store/actions'
+  import { userFilter } from '../../actions/user'
 
   export default {
     vuex: {
@@ -28,48 +28,47 @@
 </script>
 
 <style scoped>
+  .search {
+    margin: 10px 0 10px 15px;
+  }
 
-.search {
-  margin: 10px 0 10px 15px;
-}
+  .search-input {
+    border: 1px solid #F4F7FA;
+    box-sizing: border-box;
+    width: 30%;
+    max-width: 400px;
+    min-width: 309px;
+    height: 36px;
+    line-height: 1.5;
+    font-size: 14px;
+    /* (36 - 14) => 22 */
+    padding: 4px 6px;
+  }
 
-.search-input {
-  border: 1px solid #F4F7FA;
-  box-sizing: border-box;
-  width: 30%;
-  max-width: 400px;
-  min-width: 309px;
-  height: 36px;
-  line-height: 1.5;
-  font-size: 14px;
-  /* (36 - 14) => 22 */
-  padding: 4px 6px;
-}
+  .search-input:focus {
+    outline: 0 none;
+    border-color: #50BAF0;
+  }
 
-.search-input:focus {
-  outline: 0 none;
-  border-color: #50BAF0;
-}
+  .btn {
+    display: inline-block;
+    width: 50px;
+    line-height: 36px;
+    text-align: center;
+    margin-left: 8px;
+    background: #009CD5;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
 
-.btn {
-  display: inline-block;
-  width: 50px;
-  line-height: 36px;
-  text-align: center;
-  margin-left: 8px;
-  background: #009CD5;
-  border: none;
-  color: #fff;
-  font-size: 14px;
-  box-sizing: border-box;
-}
+  .btn:hover {
+    cursor: pointer;
+    background-color: #50BAF0;
+  }
 
-.btn:hover {
-  cursor: pointer;
-  background-color: #50BAF0;
-}
-
-.btn:focus {
-  outline: 0 none;
-}
+  .btn:focus {
+    outline: 0 none;
+  }
 </style>

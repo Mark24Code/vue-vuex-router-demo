@@ -8,30 +8,31 @@
 </template>
 
 <script>
-import HeaderVue from './HeaderVue'
-import TableVue from './TableVue'
-import Search from './Search'
+  import HeaderVue from './HeaderVue'
+  import TableVue from './TableVue'
+  import Search from './Search'
+  import { userAdd } from '../../actions/user'
 
-import * as actions from '../../store/actions'
-
-export default {
-  vuex: {
-    actions
-  },
-  components: {
-    HeaderVue,
-    TableVue,
-    Search
-  },
-  methods: {
-    add: function () {
-      this.userAdd({
-        id: 5,
-        name: 'xx',
-        age: 20,
-        tel: 123
-      });
+  export default {
+    vuex: {
+      actions: {
+        userAdd
+      }
+    },
+    components: {
+      HeaderVue,
+      TableVue,
+      Search
+    },
+    methods: {
+      add: function () {
+        this.userAdd({
+          id: 5,
+          name: 'xx',
+          age: 20,
+          tel: 123
+        });
+      }
     }
   }
-}
 </script>
