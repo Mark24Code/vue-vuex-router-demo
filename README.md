@@ -26,6 +26,7 @@ npm run build
 
 ## 三、主要项目结构（ 由 vue-cli 生成 ）
 
+```javascript
 ├── README.md
 ├── build ( 基本编译和服务的配置 )
 │   ├── build.js
@@ -51,6 +52,7 @@ npm run build
 │   ├── router.js ( vue-router: router 的封装 )
 │   └── store
 └── static ( 发布的静态资源目录: publicPath )
+```
 
 ## 四、对生成项目的修改之处
 
