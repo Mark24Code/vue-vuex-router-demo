@@ -20,10 +20,10 @@ const mutations = {
   },
   [types.USER_EDIT] (state, user) {
     const id = user.id
-
-    state.users.forEach((currentUser) => {
+    // 未测试
+    state.users.forEach(currentUser => {
       if(currentUser.id === id) {
-        currentUser = { ...user }
+        currentUser = user
       }
     })
   },

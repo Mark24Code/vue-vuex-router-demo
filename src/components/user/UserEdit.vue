@@ -21,6 +21,7 @@
 <script>
   import HeaderVue from './HeaderVue'
   import { userEdit } from '../../actions/user'
+  import { getUser } from '../../getters/user'
   import router from '../../router'
 
   export default {
@@ -32,11 +33,7 @@
         userEdit
       },
       getters: {
-        user: function (state) {
-          return state.users.find(function (user) {
-            return user.id === state.currentId
-          })
-        }
+        user: getUser
       }
     },
     methods: {
