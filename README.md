@@ -62,7 +62,7 @@ npm run build
 
 ```javascript
 var staticPath = path.posix.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
-app.use(staticPath, express.static('src/assets/'))
+app.use(staticPath, express.static('./static'))
 ```
 
 ## 五、为何这样配置目录
@@ -71,5 +71,5 @@ app.use(staticPath, express.static('src/assets/'))
 2. store 目录只配置 vuex store 概念的核心配置，其中官方的 mutation-types 我认为不必要存在，本质上就是配置 const 变量，所以我使用了 constants.js（还有就是中划线命名文件名个人觉得不舒服）
 3. store-modules 配置，和官方一样，将文件拆分为 modules，但是添加了入口文件 index.js，这样方便更好的声明式导出和方便 import
 4. components 目录也用了一样的方式，使用 index.js 来当入口文件，合理导出
-5. actions 目录就比较直接，因为可能会有业务逻辑和 async 逻辑，最直接最好理解和维护 
+5. actions 目录就比较直接，因为可能会有业务逻辑和 async 逻辑，最直接最好理解和维护
 6. 删除了 eslint，多人团队适合，我表示不喜欢，喜欢直接写代码
